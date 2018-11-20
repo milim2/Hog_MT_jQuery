@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="jqm1.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- Main Page-->
+   
+    <div data-role="page" id="first">            
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Studyroom booking</h1>
+                    <a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>                   
+                </div>
+
+        <div role="main" class="ui-content">  
+            <form>
+                <div class="ui-field-contain">
+                <label for="select-native-1">Room</label>
+                <select name="select-native-1" id="select-native-1">
+                    <option value="1">Gryffindor</option>
+                    <option value="2">Hufflepuff</option>
+                    <option value="3">Ravenclaw</option>
+                    <option value="4">Slyderin</option>
+                </select>    
+                </div>       
+                <div class="ui-field-contain">
+        <label for="date-1">Date</label>
+        <input type="date" date-clear-btn="true" name="date-1" id="date" value=""  /> 
+       
+                </div>
+                <div class="ui-field-contain">
+        <label for="time-1">Time</label>
+        <input type="time" data-clear-btn="false" id="time-1" value="">
+    </div>
+
+    <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><input type="submit" value="Submit" data-theme="a"></div>
+        <div class="ui-block-b"><input type="submit" value="Reset" data-theme="b"></div>
+
+    </fieldset>
+    
+    <div data-role="footer">
+    <h3>Hogwarts campus of Sheridan College</h3>
+    </div>
+</form>
+</body>
+</html>
