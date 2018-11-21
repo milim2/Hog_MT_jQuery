@@ -10,9 +10,48 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     
     <link type="text/css" rel="stylesheet" href="style.css">
+    <!-- <script type="text/javascript" src="jqm1.js"></script> -->
     
-    <script type="text/javascript" src="jqm1.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <!-- timepicker library -->
+    <link rel="stylesheet" href="jqueryLibrary/jquery.timepicker.min.css">
+    <script src="jqueryLibrary/jquery.timepicker.min.js"></script>
+
+    <!-- Add timepicker to input field -->
+    <script>
+        $(document).ready(function(){
+            $("#time1").timepicker({
+                timeFormat: 'h:i A',
+                minTime: '06:00',
+                maxTime: '23:00',            
+                interval: 30,
+                scrollbar: true 
+            });
+              $('#time1').on('changeTime', function(){
+              $('#onselectTarget1').text($(this).val());
+            });
+
+
+            $("#time2").timepicker({
+                timeFormat: 'h:i A',
+                minTime: '06:00',
+                maxTime: '23:00',            
+                interval: 30,
+                scrollbar: true 
+            });
+              $('#time2').on('changeTime', function(){
+                $('#onselectTarget2').text($(this).val());
+            });
+
+           
+            
+       
+
+
+        });
+    </script>
     <title>Document</title>
 </head>
 <body>
@@ -41,9 +80,15 @@
         <input type="date" date-clear-btn="true" name="date-1" id="date" value=""  /> 
        
                 </div>
-                <div class="ui-field-contain">
-        <label for="time-1">Time</label>
-        <input type="time" data-clear-btn="false" id="time-1" value="">
+
+                <div>
+                <!-- <div class="ui-field-contain"> -->
+        <label>Time</label>
+        <input type="text" id="time1" class="tBox">
+        <span id="onselectTarget1" class="tBox"></span>
+
+        <input type="text" id="time2" class="tBox">
+        <span id="onselectTarget2" class="tBox"></span>
     </div>
 
     <fieldset class="ui-grid-a">
