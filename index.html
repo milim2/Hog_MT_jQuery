@@ -10,7 +10,6 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     
     <link type="text/css" rel="stylesheet" href="style.css">
-    <!-- <script type="text/javascript" src="jqm1.js"></script> -->
     
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -44,8 +43,8 @@
               $('#time2').on('changeTime', function(){
                 $('#onselectTarget2').text($(this).val());
             });
-
-           
+            
+            $("#toggle-menu").toggle("slide");   
             
        
 
@@ -54,15 +53,17 @@
     </script>
     <title>Document</title>
 </head>
+
 <body>
-    <!-- Main Page-->
-   
-    <div data-role="page" id="first">            
-            
-            <div data-role="header" data-position="fixed">
-                <h1>Studyroom booking</h1>
-                    <a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>                   
-                </div>
+
+    <!-- Main Page -->   
+    <div data-role="page" id="first">   
+
+            <div data-role="header" data-position="fixed" data-iconpos="right">
+            <h1>Studyroom booking</h1>              
+            <a data-role="button" href="#" data-icon="bullets" data-iconpos="right" class="ui-btn-right" data-theme="a">MENU</a>
+            </div>
+
 
         <div role="main" class="ui-content">  
             <form>
