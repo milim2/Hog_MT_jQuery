@@ -1,0 +1,211 @@
+<!-- 
+	File: Final  Project
+	Name: Lee, Milim     StudentID: 991274533  
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- timepicker library -->
+    <link rel="stylesheet" href="jqueryLibrary/jquery.timepicker.min.css">
+    <script src="jqueryLibrary/jquery.timepicker.min.js"></script>
+    <script src="js/jqm1.js"></script>
+    <title>jQuery Mobile Project - Room Booking</title>
+</head>
+
+<body>
+    <!-- Main Page -->
+    <div data-role="page" data-title="Studyroom booking" id="first">
+        <div data-role="header" data-position="fixed" data-iconpos="left"> 
+        <div class="ui-grid-b"> 
+            <div class="ui-block-a"  >		 
+               <a href="#myPanel" class="ui-btn ui-corner-all ui-shadow ui-icon-grid ui-btn-icon-left">MENU</a>
+            </div>			
+            <div class="ui-block-b">			 
+                 <h2>Studyroom booking</h2>                
+            </div>	
+        </div>	
+    </div>
+    <!-- Panel -->
+        <div data-role="panel" id="myPanel" data-theme="b">
+            <div class="panel-content">
+                <h3>MENU</h3>
+                <ul data-role="listview" data-inset="true" data-theme="a">
+                    <li><a href="#https://www.sheridancollege.ca/news-and-events"  target="_blank">NEWS&EVENT</a></li>
+                    <li><a href="#roomview">ROOM VIEW</a></li>
+                    <li><a href="#">MEDIA</a></li>
+                    <li><a href="#">GROUP</a></li>
+                </ul>
+                <a data-rel="close" data-role="button" data-theme="a" 
+       data-icon="delete" data-inline="true">Close</a>
+        </div>
+    </div>
+    <!-- Choose room, date and time -->
+    <div role="main" class="ui-content">
+        <div class="ui-field-contain">
+            <label for="select-native-4" class="select">Room Type</label>
+                <select name="select-native-4" id="select-native-4">
+                    <option>Choose room type</option>
+                    <option value="Gryffindor">Gryffindor</option>
+                    <option value="Hufflepuff">Hufflepuff</option>
+                    <option value="Ravenclaw">Ravenclaw</option>
+                    <option value="Slyderin">Slyderin</option>
+                </select>
+        </div>   
+        <div class="ui-field-contain">
+                <label for="date-1">Date</label>
+                <input type="date" date-clear-btn="true" name="date-1" id="date" value="" />
+        </div>      
+        <div class="ui-field-contain">
+                <div>
+                <label>Time</label>
+                <input type="text" id="time1" class="tBox">
+                <input type="text" id="time2" class="tBox"></div>
+                <span id="onselectTarget1"></span>
+                <span id="onselectTarget2"></span>
+                </div>
+        <div>
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a"  >	
+                <a  href="#submitBtn" data-rel="dialog" data-transition="pop" class="ui-btn ui-icon-action ui-btn-icon-bottom" id="submit">Submit</a></button>
+                </div>
+                <div class="ui-block-b"  >
+                <button id="reset" class="ui-btn ui-icon-action ui-btn-icon-bottom">Reset</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>          
+      <!-- foorter -->
+        <div data-role="footer" class="ui-content">
+            <table style="width: 100%">
+              <tr style="width: 100%">
+                <td style="width:30%;"><a href="#" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left     ui-state-disabled"> Previous </a> </td>
+                 <td><h4>Campus Hogwarts</h4></td>
+                 <td style="width: 5%"><a href="#second" data-transition="slide" class="ui-btn ui-icon-carat-r ui-btn-icon-right">
+                         NEXT </a></td>
+             </tr>
+         </table>
+     </div>
+     <!-- footer end -->
+</div>
+
+
+
+
+<!-- ================================================= -->
+<!-- Second Page -->
+<div data-role="page" data-title="Studyroom booking" id="second">
+        <div data-role="header" data-position="fixed" data-iconpos="left"> 
+           <a href="#first" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">HOME</a>
+            <h1 class="ui-title">Studyroom booking</h1>
+            </div>
+       
+        <div role="main" class="ui-content">
+            <div class="ui-field-contain" id="result">
+              
+           
+            </div>            
+        </div>
+ <!-- foorter -->
+ <div data-role="footer">
+        <table style="width: 100%">
+            <tr style="width: 100%">
+                    <td style="width:40%;"><a href="#first" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Previous </a> </td>
+                <td><h3>HogwartsC</h3></td>
+                <td style="width: 10%"><a href="#roomview" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">
+                        NEXT </a></td>
+            </tr>
+        </table>
+</div>
+    <!-- footer end -->
+</div>
+<!-- ========================================================== -->
+
+
+<!-- start room view page -->
+<div data-role="page" id="roomview" >
+		<header data-role="header">
+            <a href="#first" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">HOME</a>
+            <h1 class="ui-title">ROOM VIEW</h1>
+        </header>
+			
+		<!-- content area -->
+        <div data-role="main" class="ui-content">
+        <!-- first row -->
+        <div class="ui-grid-a">
+            <div id="room" class="ui-block-a">
+                <h3>Gryffindor</h3>
+                    <img src="images/room4.jpg">
+                </a>
+            </div>
+            <div id="room" class="ui-block-b">
+                    <h3>Hufflepuff</h3>
+                    <img src="images/room3.png">
+                </a>
+            </div>
+        </div>
+            <!-- second row -->
+            <div class="ui-grid-a">
+                <div id="room" class="ui-block-a">
+                        <h3>Ravemclaw</h3>
+                        <img src="images/room2.jpg">
+                    </a>
+                </div>
+                <div id="Book" class="ui-block-b">
+                        <h3>Slyderin</h3>
+                        <img src="images/room1.jpg">
+                    </a>
+                </div>
+            </div>  
+        </div>
+	 <!-- foorter -->
+     <div data-role="footer">
+            <table style="width: 100%">
+                <tr style="width: 100%">
+                        <td style="width:40%;"><a href="#second" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left" data-transition="slideleft" data-direction="reverse"> Previous </a> </td>
+                    <td><h3>HogwartsC</h3></td>
+                    <td style="width: 10%"><a href="#second" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">
+                            Sheridan </a></td>
+                </tr>
+            </table>
+    </div>
+        <!-- footer end -->
+</div>
+	<!-- end of map page-->
+</div>
+</div>
+<!-- ========================================================== -->
+
+
+<!-- start popup page for submitBtn -->
+<div data-role="page" id="submitBtn">
+        <header data-role="header" data-theme="b">
+            <a href="#first" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">HOME</a>
+            <h1 class="ui-title">Current Booking</h1>
+        </header>	
+
+        <div class="ui-content" role="main" data-theme="b">	
+            <h3>Reservation</h3>
+                <div id= "currBooking" > </div>						Saved!!
+            <p><a href="#first" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-top">Back</a></p>	
+        </div>		
+    </div>
+    <!-- end of popup page -->
+
+<!-- ======================================================= -->
+</body>
+</html>
